@@ -25,12 +25,16 @@ elif (platform.system() == 'Windows'):
 
 
 
+#   Changed temporarily for testing
+prompt = "You're a good helper!" # "You're the dungeon master of an epic dungeons and dragons campaign! Lead your player through an epic adventure and make sure that there is a plot with a climax and an ending!"
 messages = [
     {
         "role": "system", 
-        "content": "You're the dungeon master of an epic dungeons and dragons campaign! Lead your player through an epic adventure!"
+        "content": prompt
     }
 ]
+
+
 
 while True:
     content = input("User: ")
@@ -42,4 +46,4 @@ while True:
     )
 
     chat_response = completion.choices[0].message.content
-    print(f'\nChatGPT: {chat_response}\n')
+    print(f'\nDM: {chat_response}\n')
