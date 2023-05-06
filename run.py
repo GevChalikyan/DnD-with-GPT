@@ -1,4 +1,5 @@
 import os
+import platform
 from pathlib import Path
 import openai
 
@@ -17,7 +18,10 @@ except FileNotFoundError:
     collectAPIKey()
 with open ('API Key.txt') as f:
     openai.api_key = f.readline()
-os.system('clear')
+if (platform.system() == 'Darwin'):
+    os.system('clear')
+elif (platform.system() == 'Windows'):
+    os.system('cls')
 
 
 
